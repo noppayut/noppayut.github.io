@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## About this site
 
-Personal academic website for **Noppayut Sriwatanasakdi (Mew)**, NLP Engineer at Square Enix AI & Arts Alchemy. Built on the [al-folio](https://github.com/alshedivat/al-folio) Jekyll theme and hosted on GitHub Pages at `noppayut.github.io`.
+Personal academic website for **Noppayut Sriwatanasakdi (Mew)**, Software Engineer at Astellas Pharma Inc. Built on the [al-folio](https://github.com/alshedivat/al-folio) Jekyll theme and hosted on GitHub Pages at `noppayut.github.io`.
 
 ## Development commands
 
@@ -57,6 +57,7 @@ Content is authored in Markdown/YAML and compiled to static HTML by Jekyll.
 | News items (home page)                           | [`_news/`](_news/) — one `.md` per item                                                           |
 | Publications                                     | [`_bibliography/papers.bib`](_bibliography/papers.bib) — BibTeX; auto-rendered by jekyll-scholar  |
 | CV page                                          | [`_pages/vitae.md`](_pages/vitae.md) + PDF in [`download/`](download/)                            |
+| CV LaTeX source                                  | [`_latex/`](_latex/) — `MAIN.tex` + section files; compile with `bin/build-cv`                    |
 | CV structured data                               | [`_data/cv.yml`](_data/cv.yml) (YAML fallback) or `assets/json/resume.json` (jsonresume standard) |
 | Projects                                         | [`_projects/`](_projects/) — one `.md` per project                                                |
 | Blog posts                                       | [`_posts/`](_posts/) — filename must be `YYYY-MM-DD-title.md`                                     |
@@ -79,6 +80,19 @@ Content is authored in Markdown/YAML and compiled to static HTML by Jekyll.
 
 Author self-identification (for underlining your name) is configured in `_config.yml` under `scholar.last_name` / `scholar.first_name`. Extra BibTeX fields supported: `pdf`, `arxiv`, `code`, `poster`, `slides`, `video`, `abstract`, `bibtex_show`, `selected` (set `selected=true` to appear on the home page).
 
+### CV pipeline
+
+LaTeX source lives in [`_latex/`](_latex/) (`MAIN.tex` + per-section files). Compiled with **LuaLaTeX** (BasicTeX install required; run `eval "$(/usr/libexec/path_helper)"` if `lualatex` is not found).
+
+To update the CV and publish the new PDF:
+
+```bash
+# edit _latex/*.tex, then:
+bin/build-cv   # compiles twice, copies PDF to download/NoppayutS-CV-YYMon.pdf
+```
+
+After compiling, also update the download link in [`_pages/vitae.md`](_pages/vitae.md) and [`_pages/about.md`](_pages/about.md) to point to the new filename.
+
 ### CV page vs. vitae page
 
-There are two CV-related pages: `/cv/` (rendered from `_data/cv.yml` or `assets/json/resume.json`) and `/vitae/` ([`_pages/vitae.md`](_pages/vitae.md)) which currently links to the PDF download. The PDF CVs live in [`download/`](download/) and are named with date suffixes (e.g. `NoppayutS-CV-24Nov.pdf`).
+There are two CV-related pages: `/cv/` (rendered from `_data/cv.yml` or `assets/json/resume.json`) and `/vitae/` ([`_pages/vitae.md`](_pages/vitae.md)) which links to the PDF download. The PDF CVs live in [`download/`](download/) and are named with date suffixes (e.g. `NoppayutS-CV-26May.pdf`).
