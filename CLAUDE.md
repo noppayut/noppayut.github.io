@@ -19,15 +19,29 @@ docker compose -f docker-compose-slim.yml up
 
 **Local development (without Docker):**
 
+Prerequisites (one-time, macOS):
+
+```bash
+brew install imagemagick   # required for responsive image generation
+```
+
+Then ensure TeX is in PATH (needed after a fresh shell):
+
+```bash
+eval "$(/usr/libexec/path_helper)"
+```
+
 ```bash
 bundle install
-bundle exec jekyll serve --lsi   # serves at http://localhost:4000
+bundle exec jekyll serve   # serves at http://localhost:4000
 ```
+
+> Note: Sass `@import` deprecation warnings during build are from upstream vendor SCSS (font-awesome, tabler-icons) — harmless, not actionable.
 
 **Build only:**
 
 ```bash
-bundle exec jekyll build --lsi
+bundle exec jekyll build
 ```
 
 **Lint / format (Prettier):**
