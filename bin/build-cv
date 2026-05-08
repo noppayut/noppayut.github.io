@@ -9,6 +9,7 @@ eval "$(/usr/libexec/path_helper)"
 
 cd "$LATEX_DIR"
 lualatex -interaction=nonstopmode MAIN.tex
+lualatex -interaction=nonstopmode MAIN.tex
 rm -f MAIN.aux MAIN.log MAIN.out
 
 DATESTAMP="$(date +'%y%b')"  # e.g. 26May
