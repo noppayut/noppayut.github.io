@@ -9,6 +9,7 @@ Personal academic website for **Noppayut Sriwatanasakdi (Mew)**, NLP Engineer at
 ## Development commands
 
 **Local development (Docker — recommended):**
+
 ```bash
 docker compose pull
 docker compose up       # serves at http://localhost:8080 with live reload
@@ -17,26 +18,31 @@ docker compose -f docker-compose-slim.yml up
 ```
 
 **Local development (without Docker):**
+
 ```bash
 bundle install
 bundle exec jekyll serve --lsi   # serves at http://localhost:4000
 ```
 
 **Build only:**
+
 ```bash
 bundle exec jekyll build --lsi
 ```
 
 **Lint / format (Prettier):**
+
 ```bash
 npx prettier --check .   # check formatting
 npx prettier --write .   # auto-fix formatting
 ```
 
 **Manual deploy to `gh-pages` branch:**
+
 ```bash
 bin/deploy
 ```
+
 Normally not needed — GitHub Actions auto-deploys on every push to `master`.
 
 ## Architecture
@@ -45,18 +51,18 @@ Content is authored in Markdown/YAML and compiled to static HTML by Jekyll.
 
 ### Key content files to edit
 
-| What to change | File(s) |
-|---|---|
-| Bio, intro text, profile photo | [`_pages/about.md`](_pages/about.md) |
-| News items (home page) | [`_news/`](_news/) — one `.md` per item |
-| Publications | [`_bibliography/papers.bib`](_bibliography/papers.bib) — BibTeX; auto-rendered by jekyll-scholar |
-| CV page | [`_pages/vitae.md`](_pages/vitae.md) + PDF in [`download/`](download/) |
-| CV structured data | [`_data/cv.yml`](_data/cv.yml) (YAML fallback) or `assets/json/resume.json` (jsonresume standard) |
-| Projects | [`_projects/`](_projects/) — one `.md` per project |
-| Blog posts | [`_posts/`](_posts/) — filename must be `YYYY-MM-DD-title.md` |
-| Site-wide settings, social links, scholar config | [`_config.yml`](_config.yml) |
-| GitHub repos shown on /repositories/ | [`_data/repositories.yml`](_data/repositories.yml) |
-| Co-author links in publications | [`_data/coauthors.yml`](_data/coauthors.yml) |
+| What to change                                   | File(s)                                                                                           |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| Bio, intro text, profile photo                   | [`_pages/about.md`](_pages/about.md)                                                              |
+| News items (home page)                           | [`_news/`](_news/) — one `.md` per item                                                           |
+| Publications                                     | [`_bibliography/papers.bib`](_bibliography/papers.bib) — BibTeX; auto-rendered by jekyll-scholar  |
+| CV page                                          | [`_pages/vitae.md`](_pages/vitae.md) + PDF in [`download/`](download/)                            |
+| CV structured data                               | [`_data/cv.yml`](_data/cv.yml) (YAML fallback) or `assets/json/resume.json` (jsonresume standard) |
+| Projects                                         | [`_projects/`](_projects/) — one `.md` per project                                                |
+| Blog posts                                       | [`_posts/`](_posts/) — filename must be `YYYY-MM-DD-title.md`                                     |
+| Site-wide settings, social links, scholar config | [`_config.yml`](_config.yml)                                                                      |
+| GitHub repos shown on /repositories/             | [`_data/repositories.yml`](_data/repositories.yml)                                                |
+| Co-author links in publications                  | [`_data/coauthors.yml`](_data/coauthors.yml)                                                      |
 
 ### Theme customization
 

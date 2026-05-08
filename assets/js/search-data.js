@@ -468,18 +468,11 @@ ninja.data = [{
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/introduction-to-machine-learning/";
             },},{
-        id: 'social-cv',
-        title: 'CV',
-        section: 'Socials',
-        handler: () => {
-          window.open("/download/NoppayutS-CV-24Nov.pdf", "_blank");
-        },
-      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%6E%6F%70%70%61%79%75%74@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+          window.open("mailto:%6E%6F%70%70%61%79%75%74%41%74%47%6D%61%69%6C%44%6F%74%43%6F%6D", "_blank");
         },
       },{
         id: 'social-github',
@@ -501,13 +494,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://twitter.com/miwmewmu", "_blank");
-        },
-      },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
         },
       },{
       id: 'light-theme',
