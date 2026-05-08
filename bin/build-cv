@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+LATEX_DIR="$REPO_ROOT/_latex"
+DOWNLOAD_DIR="$REPO_ROOT/download"
+
+eval "$(/usr/libexec/path_helper)"
+
+cd "$LATEX_DIR"
+lualatex -interaction=nonstopmode MAIN.tex
+rm -f MAIN.aux MAIN.log MAIN.out
+
+DATESTAMP="$(date +'%y%b')"  # e.g. 26May
+DEST="$DOWNLOAD_DIR/NoppayutS-CV-${DATESTAMP}.pdf"
+cp MAIN.pdf "$DEST"
+echo "CV written to $DEST"
