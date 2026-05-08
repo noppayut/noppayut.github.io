@@ -7,6 +7,6 @@ nav: true
 
 <!-- _pages/publications.md -->
 
-Last updated: Nov 9, 2024
+Last updated: May 8, 2026
 
-[Download my CV]({{ site.url }}/download/NoppayutS-CV-24Nov.pdf)
+[Download my CV]({{ site.url }}/download/NoppayutS-CV-26May.pdf)
